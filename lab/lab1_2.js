@@ -8,10 +8,11 @@ var task =  function(request, callback){
 	var params = {};
 	ec2.describeInstanceStatus(params, function(err, data) {
   if (err) console.log(err, err.stack); // an error occurred
-  else     console.log(data);           // successful response
+  else     {console.log(data);           // successful response
+  callback(null, data);}
 });
 	
-	callback(null,"Hello");
+	//callback(null,"Hello");
 	
 	
 }
